@@ -1,0 +1,27 @@
+{
+  "name": "SynthLauncher",
+  "short_name": "SynthLauncher",
+  "description": "A secure, modern Minecraft launcher with a sleek interface",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["games", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}
