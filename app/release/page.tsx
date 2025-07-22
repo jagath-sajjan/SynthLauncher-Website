@@ -71,22 +71,22 @@ export default function ReleasePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center space-y-8 mb-20">
-          <Badge variant="secondary" className="bg-slate-800/50 text-blue-300 border-slate-700/50">
+          <Badge variant="secondary" className="bg-card text-primary-foreground border-border shadow-lg">
             <Rocket className="mr-2 h-4 w-4" />
             Official Launch Timeline
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-bold">
-            <span className="text-white">The Official Launch is </span>
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-foreground">The Official Launch is </span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Coming Soon
             </span>
           </h1>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             While a pre-release is available for developers and contributors, the official public launch date will be
             announced soon. Get ready for the most advanced Minecraft launcher ever created.
           </p>
-          <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-4 max-w-2xl mx-auto">
-            <p className="text-sm text-slate-400">
+          <div className="bg-card/80 border border-border rounded-lg p-4 max-w-2xl mx-auto">
+            <p className="text-sm text-muted-foreground">
               <strong className="text-cyan-400">Note:</strong> A pre-release version is currently available for
               developers and contributors. The official launch date will be announced when ready.
             </p>
@@ -95,27 +95,27 @@ export default function ReleasePage() {
 
         {/* Countdown Timer */}
         <div className="max-w-4xl mx-auto mb-20">
-          <Card className="bg-slate-900/50 border-slate-800/50">
+          <Card className="bg-card/90 border-border">
             <CardHeader className="text-center">
-              <CardTitle className="text-3xl text-white flex items-center justify-center gap-2">
+              <CardTitle className="text-3xl text-foreground flex items-center justify-center gap-2">
                 <Clock className="h-8 w-8 text-cyan-400" />
                 Launch Date To Be Announced
               </CardTitle>
-              <p className="text-slate-400 mt-2">Official release date coming soon</p>
+              <p className="text-muted-foreground mt-2">Official release date coming soon</p>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div className="space-y-2">
-                  <div className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  <div className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     XX
                   </div>
-                  <div className="text-gray-400 uppercase tracking-wide">Days</div>
+                  <div className="text-muted-foreground uppercase tracking-wide">Days</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  <div className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     XX
                   </div>
-                  <div className="text-gray-400 uppercase tracking-wide">Hours</div>
+                  <div className="text-muted-foreground uppercase tracking-wide">Hours</div>
                 </div>
                 <div className="space-y-2">
                   <div className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">

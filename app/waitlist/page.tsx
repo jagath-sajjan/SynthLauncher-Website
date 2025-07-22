@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import type { ButtonProps } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -128,19 +129,19 @@ export default function WaitlistPage() {
   }
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 gradient-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center space-y-8 mb-20">
-          <Badge variant="secondary" className="bg-slate-800/50 text-blue-300 border-slate-700/50">
+          <Badge variant="outline" className="glass-card text-primary animate-float px-4 py-2 text-lg animate-glow">
             Early Access
           </Badge>
-          <h1 className="text-4xl lg:text-6xl font-bold">
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl lg:text-7xl font-bold tracking-tight">
+            <span className="gradient-text">
               Join the Revolution
             </span>
           </h1>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto glass-card p-6 rounded-lg">
             Be among the first to experience the future of Minecraft launchers. Join 130+ players already on the
             waitlist for early access and exclusive updates.
           </p>
@@ -148,9 +149,11 @@ export default function WaitlistPage() {
 
         {/* Waitlist Form */}
         <div className="max-w-md mx-auto mb-20">
-          <Card className="bg-slate-900/50 border-slate-800/50">
+          <Card className="glass-card animate-glow">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl text-white">Join the Waitlist</CardTitle>
+              <CardTitle className="text-3xl font-bold gradient-text">
+                Join the Waitlist
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               {!isSubmitted ? (
@@ -162,11 +165,11 @@ export default function WaitlistPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     disabled={isLoading}
-                    className="bg-slate-700/50 border-cyan-500/30 text-white placeholder:text-gray-400"
+                    className="glass-input"
                   />
 
                   {error && (
-                    <div className="text-red-400 text-sm text-center bg-red-500/10 border border-red-500/20 rounded p-2">
+                    <div className="text-destructive text-sm text-center bg-destructive/10 border border-destructive/20 rounded p-2">
                       {error}
                     </div>
                   )}
@@ -174,7 +177,7 @@ export default function WaitlistPage() {
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white disabled:opacity-50"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-50 animate-glow"
                   >
                     {isLoading ? (
                       <>
@@ -191,11 +194,11 @@ export default function WaitlistPage() {
                   <div className="w-16 h-16 mx-auto bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-full flex items-center justify-center">
                     <Check className="h-8 w-8 text-green-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white">You're In</h3>
+                  <h3 className="text-xl font-semibold text-foreground">You're In</h3>
                   <p className="text-gray-300">{successMessage}</p>
                   <Button
                     variant="outline"
-                    className="border-slate-600 text-slate-300 hover:bg-slate-800 bg-transparent"
+                    className="border-border text-muted-foreground hover:bg-muted bg-transparent"
                     onClick={() => {
                       setIsSubmitted(false)
                       setSuccessMessage("")
@@ -224,29 +227,31 @@ export default function WaitlistPage() {
         {/* Comparison Table */}
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl lg:text-5xl font-bold text-white">SynthLauncher vs SKLauncher vs Prism Launcher</h2>
-            <p className="text-xl text-gray-300">See why SynthLauncher is the superior choice</p>
+            <h2 className="text-3xl lg:text-5xl font-bold gradient-text">SynthLauncher vs SKLauncher vs Prism Launcher</h2>
+            <p className="text-xl text-muted-foreground">See why SynthLauncher is the superior choice</p>
           </div>
 
-          <Card className="bg-slate-900/50 border-slate-800/50">
+          <Card className="glass-card minimal-scroll">
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="border-b border-cyan-500/20 hover:bg-transparent">
-                    <TableHead className="text-white font-semibold">Feature</TableHead>
-                    <TableHead className="text-cyan-400 font-semibold">SynthLauncher</TableHead>
-                    <TableHead className="text-yellow-400 font-semibold">SKLauncher</TableHead>
-                    <TableHead className="text-purple-400 font-semibold">Prism Launcher</TableHead>
+                  <TableRow className="border-b border-border/50 hover:bg-primary/5 transition-colors">
+                    <TableHead className="text-foreground font-bold text-lg">Feature</TableHead>
+                    <TableHead className="text-primary font-bold text-lg">SynthLauncher</TableHead>
+                    <TableHead className="text-accent font-bold text-lg">SKLauncher</TableHead>
+                    <TableHead className="gradient-text font-bold text-lg">
+                      Prism Launcher
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {comparisonData.map((row, index) => (
-                    <TableRow key={index} className="border-b border-slate-700/50 hover:bg-slate-700/20">
-                      <TableCell className="font-medium text-white">{row.feature}</TableCell>
+                    <TableRow key={index} className="border-b border-border/50 hover:bg-primary/5 transition-colors">
+                      <TableCell className="font-semibold text-foreground">{row.feature}</TableCell>
                       <TableCell>
                         <div className="flex items-center gap-2">
                           <div className="flex-shrink-0">{getStatusIcon(row.synthLauncher.status)}</div>
-                          <span className={getStatusColor(row.synthLauncher.status)}>{row.synthLauncher.text}</span>
+                          <span className={`${getStatusColor(row.synthLauncher.status)} font-medium`}>{row.synthLauncher.text}</span>
                         </div>
                       </TableCell>
                       <TableCell>
@@ -272,11 +277,15 @@ export default function WaitlistPage() {
         {/* Bottom CTA */}
         <div className="text-center mt-20">
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-white">Ready to make the switch?</h3>
-            <p className="text-gray-300">Join thousands of players who are waiting for the next generation launcher.</p>
+            <h3 className="text-2xl font-bold gradient-text">
+              Ready to make the switch?
+            </h3>
+            <p className="text-muted-foreground text-lg">
+              Join thousands of players who are waiting for the next generation launcher.
+            </p>
             <Button
-              size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white"
+              variant="default"
+              className="px-8 py-6 text-lg font-semibold bg-primary hover:bg-primary/90 animate-float animate-glow"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               Join Waitlist Now

@@ -165,9 +165,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={"bg-background text-foreground " + inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex flex-col">
+          <div className="min-h-screen bg-background flex flex-col">
             <Navigation />
             <main className="flex-1">{children}</main>
             <Footer />
